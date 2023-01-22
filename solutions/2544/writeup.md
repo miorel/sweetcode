@@ -1,3 +1,9 @@
+[View this write-up on LeetCode](https://leetcode.com/problems/alternating-digit-sum/solutions/3083833/)
+
+# Strategy
+
+The problem statement pretty much describes the algorithm: iterate over the digits of the input and sum them, making sure to apply the appropriate sign for each digit.
+
 # Java
 
 ## Using a basic loop:
@@ -5,11 +11,11 @@
 ```java
 class Solution {
   public int alternateDigitSum(int n) {
-    String[] digits = Integer.toString(n).split("");
+    String digits = String.valueOf(n);
 
     int res = 0;
-    for (int i = 0; i < digits.length; ++i) {
-      res += Integer.parseInt(digits[i]) * (i % 2 == 0 ? 1 : -1);
+    for (int i = 0; i < digits.length(); ++i) {
+      res += (digits.charAt(i) - '0') * (i % 2 == 0 ? 1 : -1);
     }
     return res;
   }
@@ -21,9 +27,9 @@ class Solution {
 ```java
 class Solution {
   public int alternateDigitSum(int n) {
-    String[] digits = Integer.toString(n).split("");
-    return IntStream.range(0, digits.length)
-      .map(i -> Integer.parseInt(digits[i]) * (i % 2 == 0 ? 1 : -1))
+    String digits = String.valueOf(n);
+    return IntStream.range(0, digits.length())
+      .map(i -> (digits.charAt(i) - '0') * (i % 2 == 0 ? 1 : -1))
       .sum();
   }
 }
@@ -62,7 +68,7 @@ function alternateDigitSum(n: number): string {
 
 ```ruby
 def alternate_digit_sum(n)
-  digits = n.digits.reverse
+  digits = n.digits.reverse!
   digits.each_with_index.map { |d, i| d * (i.even? ? 1 : -1) }.sum
 end
 ```
@@ -121,9 +127,10 @@ public:
     auto s = to_string(n);
 
     int res = 0;
-    int index = 0;
-    for_each(s.cbegin(), s.cend(), [&index, &res](const char &d) {
-      res += (d - '0') * (index++ % 2 == 0 ? 1 : -1);
+    int sign = 1;
+    for_each(s.cbegin(), s.cend(), [&res, &sign](const char &d) {
+      res += (d - '0') * sign;
+      sign = -sign;
     });
     return res;
   }
