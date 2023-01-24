@@ -152,3 +152,15 @@ int alternateDigitSum(int n) {
   return res;
 }
 ```
+
+# Kotlin
+
+```kotlin
+class Solution {
+  fun alternateDigitSum(n: Int): Int {
+    return n.toString()
+      .mapIndexed { i, d -> (d - '0') * (if (i % 2 == 0) 1 else -1) }
+      .sum()
+  }
+}
+```
