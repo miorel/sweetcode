@@ -10,6 +10,7 @@ The problem statement pretty much describes the algorithm: iterate over the digi
 
 ```java
 class Solution {
+
   public int alternateDigitSum(int n) {
     String digits = String.valueOf(n);
 
@@ -20,19 +21,23 @@ class Solution {
     return res;
   }
 }
+
 ```
 
 ## Using streams:
 
 ```java
 class Solution {
+
   public int alternateDigitSum(int n) {
     String digits = String.valueOf(n);
-    return IntStream.range(0, digits.length())
+    return IntStream
+      .range(0, digits.length())
       .map(i -> (digits.charAt(i) - '0') * (i % 2 == 0 ? 1 : -1))
       .sum();
   }
 }
+
 ```
 
 # JavaScript / TypeScript
