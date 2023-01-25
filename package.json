@@ -1,0 +1,15 @@
+{
+  "name": "sweetcode",
+  "version": "0.0.1",
+  "description": "The sweetest (LeetCode) solutions this side of the Mississippi.",
+  "repository": "git@github.com:miorel/sweetcode.git",
+  "author": "Miorel-Lucian Palii <mlpalii@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "2.8.3"
+  }
+}

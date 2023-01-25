@@ -173,7 +173,7 @@ console.log(getDigitsAsNumbers(123).map((d) => d + 1));
 
 ```typescript
 function* getReversedDigitsAsGenerator(
-  n: number
+  n: number,
 ): Generator<number, void, never> {
   do {
     const d = n % 10;
