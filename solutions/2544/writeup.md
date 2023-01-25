@@ -162,10 +162,10 @@ int alternateDigitSum(int n) {
 
 ```kotlin
 class Solution {
-  fun alternateDigitSum(n: Int): Int {
-    return n.toString()
-      .mapIndexed { i, d -> (d - '0') * (if (i % 2 == 0) 1 else -1) }
-      .sum()
-  }
+    fun alternateDigitSum(n: Int): Int {
+        return n.toString().mapIndexed { i, d ->
+            (d - '0') * (if (i % 2 == 0) 1 else -1)
+        }.sum()
+    }
 }
 ```
