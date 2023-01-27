@@ -6,7 +6,8 @@
  * class ListNode(var `val`: Int) {
  *     var next: ListNode? = null
  * }
- */class Solution {
+ */
+class Solution {
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
         var carry = 0
 
@@ -40,4 +41,3 @@
         return dummyHead.next
     }
 }
-

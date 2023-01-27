@@ -14,6 +14,3 @@ class Solution {
         throw RuntimeException("no solution")
     }
 }
-
-
-
